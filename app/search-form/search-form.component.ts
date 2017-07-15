@@ -14,7 +14,9 @@ export class SearchFormComponent implements OnInit {
   }
 
   constructor() {
-    this.searchInput.valueChanges.subscribe((e) => {
+    this.searchInput.valueChanges
+      .debounceTime(400)
+      .subscribe((e) => {
           this.changeSearch.next(e);
         }  
     );

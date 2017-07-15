@@ -1,4 +1,7 @@
 <app-search-form (changeSearch)="changeSearch($event)"></app-search-form>
+Sortowanie
+<button type="button" class="btn btn-default" (click)="changeOrder('price')">Cena</button>
+
 <ul class="products">
   <app-product *ngFor="let product of productsList" [product]="product"></app-product>
 </ul>
