@@ -5,6 +5,7 @@
   </h1>
 </div>
 <h2>Witaj w sklepie  {{ title }},</h2>
-<app-product-list [products]="products"></app-product-list>
+<app-product-list [products]="products | promoted:1"></app-product-list>
+<app-product-list [products]="products | promoted:0"></app-product-list>
 
 

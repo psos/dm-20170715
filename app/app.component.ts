@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 // interfejs Produktu
-interface Product {
+export interface Product {
   id: number;
   name : string;
   price : number;
@@ -10,7 +10,8 @@ interface Product {
 }
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  //templateUrl: './app.component.html',
+  template: `test`,
   styleUrls: ['./app.component.css']
 })
 
