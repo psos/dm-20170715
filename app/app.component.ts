@@ -15,7 +15,7 @@ interface Product {
 })
 
 export class AppComponent {
-  title = 'app';
+  title = 'Orlen';
   // store lista produktów
   public products:Product[] = [
     { 

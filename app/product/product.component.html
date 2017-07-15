@@ -1,0 +1,4 @@
+    <h2 [ngClass]="{ 'product-promoted' : product.promoted }">{{ product.name }}</h2>
+    <span *ngIf="product.promoted">Promocja</span>
+    <span class="product-price">{{ product.price }}</span>
+    <span class="product-currency">{{ product.currency }}</span>
