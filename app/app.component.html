@@ -6,7 +6,7 @@
 </div>
 <h2>Witaj w sklepie Orlen,</h2>
 <ul>
-  <li *ngFor="let product of products">
+  <li *ngFor="let product of products" [ngClass]="{ 'product-promoted' : product.promoted }">
     <h2>{{ product.name }}</h2>
     <span class="product-price">{{ product.price }}</span>
     <span class="product-currency">{{ product.currency }}</span>
