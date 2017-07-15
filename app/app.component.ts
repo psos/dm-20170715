@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 // interfejs Produktu
 export interface Product {
@@ -7,16 +8,19 @@ export interface Product {
   price : number;
   currency: string;
   promoted : boolean;
+  tags : string[];
+}
+export interface Tag {
+  name : string;
 }
 @Component({
   selector: 'app-root',
-  //templateUrl: './app.component.html',
-  template: `test`,
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
 export class AppComponent {
   title = 'Orlen';
+  public searchInput = new FormControl();
   // store lista produktów
   public products:Product[] = [
     { 
@@ -24,7 +28,8 @@ export class AppComponent {
         name : 'Kawa',
         price : 5.99,
         currency : 'PLN',
-        promoted : true
+        promoted : true,
+        tags: ['test']
     },
     { 
         id : 2,
@@ -32,6 +37,7 @@ export class AppComponent {
         price : 3.99,
         currency : 'PLN',
         promoted : false,
+        tags: []
     },
     { 
         id : 3,
@@ -39,6 +45,11 @@ export class AppComponent {
         price : 2.99,
         currency : 'PLN',
         promoted : false,
+        tags: []
     },      
   ];
+
+  public changeSearch(event){
+    console.log('test app');
+  }
 }

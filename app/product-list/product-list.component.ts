@@ -7,9 +7,22 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
   @Input() public products;
-  constructor() { }
+  @Input() public filter;
+  public productsList;
+  public filterBy:string;
+  public orderBy:string;
 
-  ngOnInit() {
+  constructor() { 
+    
+  }
+  public ngOnInit() {
+    this.productsList = this.products;
   }
 
+  public changeSearch(searchstring:string) {
+      this.productsList = this.products.filter((val) => {
+          // mechanizm wyszukiwania 
+          return val.name.search(searchstring) != -1;
+      });
+  }
 }
